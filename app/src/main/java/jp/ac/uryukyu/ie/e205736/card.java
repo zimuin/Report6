@@ -1,10 +1,11 @@
 package jp.ac.uryukyu.ie.e205736;
 
-class card {
+
+class Card {
     String name;
     int number;
 
-    card(int number){
+    Card(int number){
         this.number = number;
         
         }
