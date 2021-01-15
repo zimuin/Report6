@@ -1,15 +1,17 @@
 package jp.ac.uryukyu.ie.e205736;
-import java.util.Random;
+
 
 public class Main{
-    Random rand = new Random();
-    int cardnumber = rand.nextInt(12)+1;
+    
     public static void main(String[] args){
         Dealer dealer = new Dealer();
-        Human player1 = new Human();
+        Player player1 = new Player();
         System.out.println(dealer.getOdds());
         player1.oddsDoubleUp(dealer);
         System.out.println(dealer.getOdds());
+        player1.drawCard();
+        System.out.println(player1.getPossesionCard().getCardNumber());
+        dealer.gameStart();
         
         
         
