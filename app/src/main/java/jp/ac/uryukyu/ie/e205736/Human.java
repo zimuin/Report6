@@ -9,9 +9,8 @@ public class Human {
     public void drawCard(){}
 
     public void oddsDoubleUp(Dealer target){
-        target.getOdds();
-        target.odds = target.odds*2;
-        target.setOdds(target.odds);
+        int changeNumber = target.getOdds()*2;
+        target.setOdds(changeNumber);    
     }
 
     public void battle(){}

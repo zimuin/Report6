@@ -7,9 +7,9 @@ public class Main{
     public static void main(String[] args){
         Dealer dealer = new Dealer();
         Human player1 = new Human();
-        System.out.println(dealer.odds);
+        System.out.println(dealer.getOdds());
         player1.oddsDoubleUp(dealer);
-        System.out.println(dealer.odds);
+        System.out.println(dealer.getOdds());
         
         
         

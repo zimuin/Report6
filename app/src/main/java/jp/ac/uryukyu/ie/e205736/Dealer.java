@@ -1,8 +1,8 @@
 package jp.ac.uryukyu.ie.e205736;
 
 public class Dealer {
-    int betMagnification = 10;// 基本の賭ける枚数は10枚
-    int odds = 1;//基本の賭ける倍率は等倍。
+    private int betMagnification = 10;// 基本の賭ける枚数は10枚
+    private int odds = 1;//基本の賭ける倍率は等倍。
 
     public int getOdds(){
         return odds;
