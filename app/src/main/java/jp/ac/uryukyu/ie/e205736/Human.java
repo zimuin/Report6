@@ -2,7 +2,7 @@ package jp.ac.uryukyu.ie.e205736;
 import java.util.Random;
 
 public class Human {
-    private String name = "ゲスト";// 名前
+    private String name;// 名前
     private int possessionChip = 100;// 初期所持チップ
     private Card possesionCard;//相手に公開する自分のカード
     Random rand = new Random();

@@ -23,6 +23,8 @@ public class Dealer {
         System.out.println("お互いに勝負することが決まった後、カードをお互いに明かして");
         System.out.println("数字の大きい方のプレイヤーが勝利です。");
         System.out.println("");
+        System.out.println("お互いのカードの数字が同じだった場合は何も起きず、次のゲームに移ります。");
+        System.out.println("");
         System.out.println("プレイヤーには最初にチップを１００枚お配り致します。");
         System.out.println("基本の掛け金は１０枚。ゲームに負けたプレイヤーは相手に掛け金を払っていただきます。");
         System.out.println("また、カードを引いたプレイヤーには取れるアクションが４つあります。");

@@ -6,12 +6,10 @@ public class Main{
     public static void main(String[] args){
         Dealer dealer = new Dealer();
         Player player1 = new Player();
-        System.out.println(dealer.getOdds());
-        player1.oddsDoubleUp(dealer);
-        System.out.println(dealer.getOdds());
+        Rival enemy1 = new Rival();
         player1.drawCard();
         System.out.println(player1.getPossesionCard().getCardNumber());
-        dealer.gameStart();
+        enemy1.facialExpression(player1);
         
         
         
