@@ -1,8 +1,10 @@
 package jp.ac.uryukyu.ie.e205736;
+import java.util.ArrayList;
 
 public class Dealer {
     private int betMagnification = 10;// 基本の賭ける枚数は10枚
     private int odds = 1;// 基本の賭ける倍率は等倍。
+    private ArrayList<String> actions = new ArrayList<String>();
 
     public int getOdds() {
         return odds;
@@ -11,6 +13,16 @@ public class Dealer {
     public void setOdds(int value) {
         odds = value;
     }
+
+    public void setActions(){
+       
+        actions.add("カードを引き直す");
+        actions.add("掛け金を二倍にする");
+        actions.add("勝負を降りる");
+        actions.add("今のカードで勝負する");
+    }
+
+    public ArrayList<String> getActions(){return actions;}
 
     public int getBetMagnification(){return betMagnification;}
 

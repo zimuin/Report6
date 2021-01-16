@@ -4,7 +4,7 @@ import java.util.Random;
 public class Human {
     private String name;// 名前
     private int possessionChip = 100;// 初期所持チップ
-    private Card possesionCard;//相手に公開する自分のカード
+    private Card possesionCard;//相手に見せている自分のカード
     Random rand = new Random();
     private int randomCardNumber ;//カードの数字は１から１３の間のどれか
 
@@ -17,6 +17,7 @@ public class Human {
         randomCardNumber = rand.nextInt(13)+1;
         Card drawCard = new Card(randomCardNumber);
         possesionCard = drawCard;
+        System.out.println(name+"のドロー");
        
     }
 
