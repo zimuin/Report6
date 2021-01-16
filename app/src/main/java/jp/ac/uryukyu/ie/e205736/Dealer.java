@@ -2,17 +2,17 @@ package jp.ac.uryukyu.ie.e205736;
 
 public class Dealer {
     private int betMagnification = 10;// 基本の賭ける枚数は10枚
-    private int odds = 1;//基本の賭ける倍率は等倍。
+    private int odds = 1;// 基本の賭ける倍率は等倍。
 
-    public int getOdds(){
+    public int getOdds() {
         return odds;
     }
 
-    public void setOdds(int value){
+    public void setOdds(int value) {
         odds = value;
     }
-    
-    public void explainRule(){
+
+    public void explainRule() {
         System.out.println("このゲームは二人のプレイヤーが数字のみが書かれたカードを");
         System.out.println("使用して行う簡単なインディアンポーカーです。");
         System.out.println();
@@ -47,17 +47,43 @@ public class Dealer {
         System.out.println("両プレイヤーの同意により勝負を行います。");
         System.out.println("");
         System.out.println("このゲームはどちらかのプレイヤーのチップが尽きるまで繰り返されます。");
+        System.out.println("今回はあなたは後攻です");
         System.out.println("ルールはよろしいですか？");
         System.out.println("");
         System.out.println("では...");
         System.out.println("ゲームを開始します！");
 
-
     }
 
-    public void gameStart(){
+    public void judgeButtle(Player target1, Rival target2) {
+        int target1Result = target1.getPossesionCard().getCardNumber();
+        int target2Result = target2.getPossesionCard().getCardNumber();
+        int nowOdds = betMagnification*odds;
+        
+
+        System.out.println(target1.getName() + "様のカードは" + target1Result);
+        System.out.println(target2.getName() + "様のカードは" + target2Result);
+        
+        if (target1Result > target2Result) {
+            System.out.println(target1.getName() + "様の勝利です");
+            target2.loseChip(nowOdds);
+            target1.getChip(nowOdds);
+            System.out.println("チップを"+nowOdds+"枚手に入れた！");
+        }
+        if(target1Result < target2Result){
+            System.out.println(target2.getName()+"様の勝利です");
+            target1.loseChip(nowOdds);
+            target2.getChip(nowOdds);
+            System.out.println("チップを"+nowOdds+"枚失った...");
+        }
+        if(target1Result == target2Result){
+            System.out.println("引き分けです");
+        }
+        odds = 1;
+    }
+
+    public void gameStart() {
         explainRule();
-    
 
     }
 }

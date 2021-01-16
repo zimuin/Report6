@@ -8,6 +8,10 @@ public class Human {
     Random rand = new Random();
     private int randomCardNumber = rand.nextInt(13)+1;//カードの数字は１から１３の間のどれか
 
+    Human(String name){
+        this.name = name;
+    }
+    
     //カードを引くためのメソッド
     public void drawCard(){
         Card drawCard = new Card(randomCardNumber);
@@ -24,15 +28,28 @@ public class Human {
     //今所持しているカードで勝負するためのメソッド
     public void battle(){}
 
+    public void loseChip(int value){
+        possessionChip -= value;
+    }
+
+    public void getChip(int value){
+        possessionChip += value;
+    }
+
 
     //今所持しているカードのインスタンスを返すためのメソッド
     public Card getPossesionCard(){
         return possesionCard;
     }
 
+    public int getPossesionChip(){
+        return possessionChip;
+    }
+
     public void setPossesionCard(Card card){
         card = possesionCard;
     }
 
+    public String getName(){return name;}
 
 }
