@@ -6,15 +6,15 @@ public class Rival extends Human {
         super(name);
     }
     
-    public void facialExpression(Player target) {
-        if(target.getPossesionCard().getCardNumber()<=5){
+    public void facialExpression(Player target1) {
+        if(target1.getPossesionCard().getCardNumber()<=5){
             System.out.println(getName()+"は勝気な表情を浮かべている...");
         }
-        if(6<=target.getPossesionCard().getCardNumber()&&target.getPossesionCard().getCardNumber()<=10){
+        if(6<=target1.getPossesionCard().getCardNumber()&&target1.getPossesionCard().getCardNumber()<=10){
             System.out.println(getName()+"は微妙な顔をしている...");
         }
 
-        if(11<=target.getPossesionCard().getCardNumber()){
+        if(11<=target1.getPossesionCard().getCardNumber()){
             System.out.println(getName()+"は不満げな表情を浮かべている...");
         }
         
@@ -22,15 +22,22 @@ public class Rival extends Human {
 
     
 
-
-    public void reDrawCard(Player target){
-        if(8<=target.getPossesionCard().getCardNumber()){
+    public void reDrawCard(Player target1){
+        if(8<=target1.getPossesionCard().getCardNumber()){
             drawCard();
             System.out.println(getName()+"は引き直した...");
         }
     }
 
-    
+    public void oddsUp(Player target1,Dealer target){
+        if(target1.getPossesionCard().getCardNumber()<=10){
+            oddsDoubleUp(target);
+            System.out.println(getName()+"は掛け金を二倍にした！");
+        }
+    }
+
+
+
 
 
 

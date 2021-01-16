@@ -12,6 +12,8 @@ public class Dealer {
         odds = value;
     }
 
+    public int getBetMagnification(){return betMagnification;}
+
     public void explainRule() {
         System.out.println("このゲームは二人のプレイヤーが数字のみが書かれたカードを");
         System.out.println("使用して行う簡単なインディアンポーカーです。");
@@ -37,7 +39,7 @@ public class Dealer {
         System.out.println("自分のカードが明らかに相手のカードより数字が低いと思われた場合は");
         System.out.println("勝負を降りることもできます。");
         System.out.println("その場合、所持しているチップから");
-        System.out.println("基本の掛け金10チップを相手に支払っていただきます。");
+        System.out.println("現在の掛け金の半分を相手に支払っていただきます。");
         System.out.println("");
         System.out.println("３つ目は掛け金を二倍にすることです。");
         System.out.println("自分のカードに自信がある場合は掛け金を二倍にすることができます。");
@@ -55,25 +57,26 @@ public class Dealer {
 
     }
 
-    public void judgeButtle(Player target1, Rival target2) {
-        int target1Result = target1.getPossesionCard().getCardNumber();
-        int target2Result = target2.getPossesionCard().getCardNumber();
+    public void judgeButtle(Player player1, Rival player2) {
+        int target1Result = player1.getPossesionCard().getCardNumber();
+        int target2Result = player2.getPossesionCard().getCardNumber();
         int nowOdds = betMagnification*odds;
         
 
-        System.out.println(target1.getName() + "様のカードは" + target1Result);
-        System.out.println(target2.getName() + "様のカードは" + target2Result);
+        System.out.println("それでは勝負！");
+        System.out.println(player1.getName() + "様のカードは" + target1Result);
+        System.out.println(player2.getName() + "様のカードは" + target2Result);
         
         if (target1Result > target2Result) {
-            System.out.println(target1.getName() + "様の勝利です");
-            target2.loseChip(nowOdds);
-            target1.getChip(nowOdds);
+            System.out.println(player1.getName() + "様の勝利です");
+            player2.loseChip(nowOdds);
+            player1.getChip(nowOdds);
             System.out.println("チップを"+nowOdds+"枚手に入れた！");
         }
         if(target1Result < target2Result){
-            System.out.println(target2.getName()+"様の勝利です");
-            target1.loseChip(nowOdds);
-            target2.getChip(nowOdds);
+            System.out.println(player2.getName()+"様の勝利です");
+            player1.loseChip(nowOdds);
+            player2.getChip(nowOdds);
             System.out.println("チップを"+nowOdds+"枚失った...");
         }
         if(target1Result == target2Result){
@@ -82,8 +85,5 @@ public class Dealer {
         odds = 1;
     }
 
-    public void gameStart() {
-        explainRule();
-
-    }
+   
 }

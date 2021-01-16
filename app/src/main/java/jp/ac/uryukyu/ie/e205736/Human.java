@@ -6,7 +6,7 @@ public class Human {
     private int possessionChip = 100;// 初期所持チップ
     private Card possesionCard;//相手に公開する自分のカード
     Random rand = new Random();
-    private int randomCardNumber = rand.nextInt(13)+1;//カードの数字は１から１３の間のどれか
+    private int randomCardNumber ;//カードの数字は１から１３の間のどれか
 
     Human(String name){
         this.name = name;
@@ -14,8 +14,9 @@ public class Human {
     
     //カードを引くためのメソッド
     public void drawCard(){
+        randomCardNumber = rand.nextInt(13)+1;
         Card drawCard = new Card(randomCardNumber);
-        this.possesionCard = drawCard;
+        possesionCard = drawCard;
        
     }
 
@@ -27,6 +28,12 @@ public class Human {
 
     //今所持しているカードで勝負するためのメソッド
     public void battle(){}
+
+    //このゲームでの勝負を降りるためのメソッド
+    public void fold(Dealer target){
+        int nowOdds = target.getBetMagnification()*target.getOdds();
+        loseChip(nowOdds/2);
+    }
 
     public void loseChip(int value){
         possessionChip -= value;
@@ -42,13 +49,19 @@ public class Human {
         return possesionCard;
     }
 
+    public void resetPosessionCard(){
+        possesionCard = null;
+    }
+
     public int getPossesionChip(){
         return possessionChip;
     }
 
     public void setPossesionCard(Card card){
-        card = possesionCard;
+        card = this.possesionCard;
     }
+
+    
 
     public String getName(){return name;}
 
