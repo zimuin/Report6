@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Player extends Human {
 
+    private Scanner scanner = new Scanner(System.in);
    
 
     Player(String name){
@@ -18,7 +19,7 @@ public class Player extends Human {
             index += 1;
         }
 
-        Scanner scanner = new Scanner(System.in);
+        
         int actionNumber = scanner.nextInt();
         if(actionNumber==1){drawCard();}
         if(actionNumber==2){oddsDoubleUp(target);}

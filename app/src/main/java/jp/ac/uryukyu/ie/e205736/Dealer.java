@@ -36,6 +36,9 @@ public class Dealer {
     public void explainRule() {
         System.out.println("Enterを押すと進みます");
         scanner.nextLine();
+        System.out.println("ゲスト様、今宵はお越しいただきありがとうございます");
+        System.out.println("このゲームのルールを説明いたします。");
+        scanner.nextLine();
         System.out.println("このゲームは二人のプレイヤーが数字のみが書かれたカードを");
         System.out.println("使用して行う簡単なインディアンポーカーです。");
         System.out.println();
@@ -133,7 +136,7 @@ public class Dealer {
     public void finishGame(Player player1,Rival player2){
         if((player1.getPossesionChip()<=0)||(player2.getPossesionChip()==0)){
             if(player1.getPossesionChip()<=0){
-                System.out.println(player1.getName()+"様のチップが尽きてしまいました");
+                System.out.println("おっと、"+player1.getName()+"様のチップが尽きてしまいました");
                 System.out.println("これでインディアンポーカーは終了です");
                 System.out.println(player1.getName()+"様はお引き取りください");
             }

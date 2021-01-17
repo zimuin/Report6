@@ -73,4 +73,8 @@ public class Human {
 
     public String getBattleWill(){return battleWill;}
 
+    public void resetBattleWill(){
+        battleWill =null;
+    }
+
 }

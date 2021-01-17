@@ -39,8 +39,10 @@ public class Rival extends Human {
     public void thinkBattle(Player player1,Dealer target){
         if(player1.getPossesionCard().getCardNumber()==13){
             fold(target);
+            System.out.println(getName()+"は降りる気らしい...");
         }else{
             battle();
+            System.out.println(getName()+"はやる気満々だ！");
         }
     }
 
