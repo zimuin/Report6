@@ -24,7 +24,8 @@ public class Main {
                 player2.oddsUp(player1, dealer);
                 player2.thinkBattle(player1, dealer);
                 scanner.nextLine();
-                while(player1.getBattleWill()!="yes"){
+                while((player1.getBattleWill()==null)||player2.getBattleWill()==null){
+                    System.out.println("番号を入力後、Enterを押してください");
                     player1.select(dealer, dealer.getActions());
                     player2.facialExpression(player1);
                     dealer.showBetMagnification();

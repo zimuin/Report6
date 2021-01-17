@@ -39,7 +39,7 @@ public class Dealer {
         System.out.println("ゲスト様、今宵はお越しいただきありがとうございます");
         System.out.println("このゲームのルールを説明いたします。");
         scanner.nextLine();
-        System.out.println("このゲームは二人のプレイヤーが数字のみが書かれたカードを");
+        System.out.println("このゲームは二人のプレイヤーが1から13の数字のみが書かれたカードを");
         System.out.println("使用して行う簡単なインディアンポーカーです");
         System.out.println();
         scanner.nextLine();
@@ -61,7 +61,7 @@ public class Dealer {
         System.out.println("");
         scanner.nextLine();
         System.out.println("1つ目はカードを引き直すことです");
-        System.out.println("ゲーム中に1回だけカードを引き直すことができます");
+        System.out.println("ゲーム中に対戦相手の会員様は1回、ゲスト様は1回だけカードを引き直すことができます");
         System.out.println("自分のカードの数字が低いと思われた場合は早々に引き直していただいて構いません");
         System.out.println("");
         scanner.nextLine();
@@ -69,7 +69,7 @@ public class Dealer {
         System.out.println("自分のカードが明らかに相手のカードより数字が低いと思われた場合は");
         System.out.println("勝負を降りることもできます。");
         System.out.println("その場合、所持しているチップから");
-        System.out.println("現在の掛け金の半分を相手に支払っていただきます");
+        System.out.println("現在の掛け金の半分を没収いたします");
         System.out.println("");
         scanner.nextLine();
         System.out.println("３つ目は掛け金を二倍にすることです");
@@ -149,7 +149,7 @@ public class Dealer {
                 System.out.println(player1.getName()+"様はお引き取りください");
             }
             if(player2.getPossesionChip()<=0){
-                System.out.println(player2.getName()+"様のチップが尽きてしまいました");
+                System.out.println("おっと、"+player2.getName()+"様のチップが尽きてしまいました");
                 System.out.println("これでインディアンポーカーは終了です");
                 System.out.println(player2.getName()+"様はお引き取りください");
             }
