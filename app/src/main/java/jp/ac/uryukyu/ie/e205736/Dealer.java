@@ -74,7 +74,7 @@ public class Dealer {
         scanner.nextLine();
         System.out.println("３つ目は掛け金を二倍にすることです。");
         System.out.println("自分のカードに自信がある場合は掛け金を二倍にすることができます。");
-        System.out.println("またこのアクションはゲーム中、お互いに一回づつ行うことができます。");
+        System.out.println("ですがあくまで程々にしないとチップが尽きてしまいますのでご注意を。");
         System.out.println("");
         scanner.nextLine();
         System.out.println("４つ目は現在のカードで勝負することです。");
@@ -91,6 +91,15 @@ public class Dealer {
 
     }
 
+    public void showBetMagnification(){
+        int nowOdds = betMagnification*odds;
+        System.out.println("現在の掛け金は"+nowOdds+"枚です");
+    }
+
+    public void showChipStatus(Player player1,Rival player2,Dealer dealer){
+        System.out.println(player1.getName()+"様の現在のチップは"+player1.getPossesionChip()+"枚です。");
+        System.out.println(player2.getName()+"様の現在のチップは"+player2.getPossesionChip()+"枚です。");
+    }
     public void judgeButtle(Player player1, Rival player2) {
         if (player1.getBattleWill() == "yes" && player2.getBattleWill() == "yes") {
             int target1Result = player1.getPossesionCard().getCardNumber();
@@ -105,14 +114,12 @@ public class Dealer {
                 System.out.println(player1.getName() + "様の勝利です");
                 player2.loseChip(nowOdds);
                 player1.getChip(nowOdds);
-                System.out.println("チップを" + nowOdds + "枚手に入れた！");
                 scanner.nextLine();
             }
             if (target1Result < target2Result) {
                 System.out.println(player2.getName() + "様の勝利です");
                 player1.loseChip(nowOdds);
                 player2.getChip(nowOdds);
-                System.out.println("チップを" + nowOdds + "枚失った...");
                 scanner.nextLine();
             }
             if (target1Result == target2Result) {
@@ -134,7 +141,7 @@ public class Dealer {
     }
 
     public void finishGame(Player player1,Rival player2){
-        if((player1.getPossesionChip()<=0)||(player2.getPossesionChip()==0)){
+        if((player1.getPossesionChip()<=0)||(player2.getPossesionChip()<=0)){
             if(player1.getPossesionChip()<=0){
                 System.out.println("おっと、"+player1.getName()+"様のチップが尽きてしまいました");
                 System.out.println("これでインディアンポーカーは終了です");

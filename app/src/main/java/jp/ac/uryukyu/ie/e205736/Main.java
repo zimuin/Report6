@@ -27,12 +27,15 @@ public class Main {
                 while(player1.getBattleWill()!="yes"){
                     player1.select(dealer, dealer.getActions());
                     player2.facialExpression(player1);
+                    dealer.showBetMagnification();
                     scanner.nextLine();
                 }
                 dealer.judgeButtle(player1, player2);
                 dealer.foldGame(player1, player2);
                 player1.resetBattleWill();
                 player2.resetBattleWill();
+                dealer.showChipStatus(player1, player2, dealer);
+                scanner.nextLine();
             }
             dealer.finishGame(player1, player2);
             break;

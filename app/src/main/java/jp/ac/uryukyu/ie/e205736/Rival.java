@@ -32,7 +32,6 @@ public class Rival extends Human {
     public void oddsUp(Player target1,Dealer target){
         if(target1.getPossesionCard().getCardNumber()<=10){
             oddsDoubleUp(target);
-            System.out.println(getName()+"は掛け金を二倍にした！");
         }
     }
 

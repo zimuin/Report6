@@ -25,7 +25,8 @@ public class Human {
     //賭け倍率を２倍にするためのメソッド
     public void oddsDoubleUp(Dealer target){
         int changeNumber = target.getOdds()*2;
-        target.setOdds(changeNumber);    
+        target.setOdds(changeNumber); 
+        System.out.println(name+"は掛け金を二倍にした");   
     }
 
     //今所持しているカードで勝負するためのメソッド
@@ -42,10 +43,12 @@ public class Human {
 
     public void loseChip(int value){
         possessionChip -= value;
+        System.out.println(name+"は"+value+"枚チップを失った");
     }
 
     public void getChip(int value){
         possessionChip += value;
+        System.out.println(name+"は"+value+"枚チップを得た");
         
     }
 
