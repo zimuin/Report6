@@ -26,10 +26,7 @@ public class Player extends Human {
         if(actionNumber==4){battle();}
     }
 
-    @Override
-    public void battle(){
-
-    }
+    
     
     
 

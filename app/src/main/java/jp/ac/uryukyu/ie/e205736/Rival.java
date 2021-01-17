@@ -36,6 +36,13 @@ public class Rival extends Human {
         }
     }
 
+    public void thinkBattle(Player player1,Dealer target){
+        if(player1.getPossesionCard().getCardNumber()==13){
+            fold(target);
+        }else{
+            battle();
+        }
+    }
 
 
 

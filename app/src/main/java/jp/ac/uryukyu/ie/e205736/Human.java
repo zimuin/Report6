@@ -5,8 +5,9 @@ public class Human {
     private String name;// 名前
     private int possessionChip = 100;// 初期所持チップ
     private Card possesionCard;//相手に見せている自分のカード
-    Random rand = new Random();
+    private Random rand = new Random();
     private int randomCardNumber ;//カードの数字は１から１３の間のどれか
+    private String battleWill;
 
     Human(String name){
         this.name = name;
@@ -28,12 +29,15 @@ public class Human {
     }
 
     //今所持しているカードで勝負するためのメソッド
-    public void battle(){}
+    public void battle(){
+        battleWill = "yes";
+    }
 
     //このゲームでの勝負を降りるためのメソッド
     public void fold(Dealer target){
         int nowOdds = target.getBetMagnification()*target.getOdds();
         loseChip(nowOdds/2);
+        battleWill = "no";
     }
 
     public void loseChip(int value){
@@ -42,6 +46,7 @@ public class Human {
 
     public void getChip(int value){
         possessionChip += value;
+        
     }
 
 
@@ -65,5 +70,7 @@ public class Human {
     
 
     public String getName(){return name;}
+
+    public String getBattleWill(){return battleWill;}
 
 }
