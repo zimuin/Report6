@@ -123,10 +123,25 @@ public class Dealer {
 
     public void foldGame(Player player1, Rival player2) {
         if ((player1.getBattleWill() == "no") || (player2.getBattleWill() == "no")) {
-            System.out.println("今回のゲームは勝負の同意が得られませんでした。");
+            System.out.println("今回のゲームは勝負の同意が得られませんでした");
             System.out.println("次のゲームに移ります");
             odds = 1;
             scanner.nextLine();
+        }
+    }
+
+    public void finishGame(Player player1,Rival player2){
+        if((player1.getPossesionChip()<=0)||(player2.getPossesionChip()==0)){
+            if(player1.getPossesionChip()<=0){
+                System.out.println(player1.getName()+"様のチップが尽きてしまいました");
+                System.out.println("これでインディアンポーカーは終了です");
+                System.out.println(player1.getName()+"様はお引き取りください");
+            }
+            if(player2.getPossesionChip()<=0){
+                System.out.println(player2.getName()+"様のチップが尽きてしまいました");
+                System.out.println("これでインディアンポーカーは終了です");
+                System.out.println(player2.getName()+"様はお引き取りください");
+            }
         }
     }
 
