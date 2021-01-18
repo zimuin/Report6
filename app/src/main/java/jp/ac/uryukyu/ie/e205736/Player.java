@@ -40,7 +40,7 @@ public class Player extends Human {
     /**
      * 相手プレイヤーのカードの数字を出力するためのメソッド
      * 相手のカードが見えるルールはこのメソッドで実装しています
-     * @param player2
+     * @param player2　ユーザーが対戦するプレイヤーのインスタンス
      */
     public void showRivalCard(Rival player2){
         System.out.println("相手のカードは" + player2.getPossesionCard().getCardNumber());

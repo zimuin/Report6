@@ -120,7 +120,7 @@ public class Dealer {
     /**
      * 現在の掛け金を出力するためのメソッド
      * ゲームプレイヤーが掛け金を増やした時に出力します
-     * @param nowOdds 基本の掛け枚数と掛け倍率の乗算を現在の掛け金としています
+     * 基本の掛け枚数と掛け倍率の乗算を現在の掛け金としています
      */
     public void showBetMagnification(){
         int nowOdds = betMagnification*odds;
@@ -148,9 +148,10 @@ public class Dealer {
 
     /**
      * ゲームが勝負の段階を迎えたら勝敗判定をするためのメソッド
-     * @param battleWill　2人プレイヤーの勝負する意思の値
      * このメソッドは2人のプレイヤーの勝負する意思が
      * ともに"yes"の時だけ実行されます
+     * @param player1 ユーザーが操作するプレイヤーのインスタンス
+     * @param player2 ユーザーが対戦するプレイヤーのインスタンス
      */
     public void judgeButtle(Player player1, Rival player2) {
         if (player1.getBattleWill() == "yes" && player2.getBattleWill() == "yes") {

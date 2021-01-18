@@ -42,7 +42,7 @@ public class Human {
 
     /**
      * プレイヤーが今所持しているカードで勝負するためのメソッド
-     * @param battleWill このメソッドで勝負する意思の値を"yes"にします
+     * このメソッドで勝負する意思の値を"yes"にします
      */
     public void battle(){
         battleWill = "yes";
@@ -50,8 +50,9 @@ public class Human {
 
     /**
      * プレイヤーがこのゲームでの勝負を降りるためのメソッド
-     * @param battleWill このメソッドで勝負する意思の値を"no"にします
-     * @param nowOdds 基本の掛け枚数と掛け倍率の乗算を現在の掛け金としています
+     * このメソッドで勝負する意思の値を"no"にします
+     * 基本の掛け枚数と掛け倍率の乗算を現在の掛け金としています
+     * @param dealer　ゲームを進行させるディーラーのインスタンス
      */
     public void fold(Dealer dealer){
         int nowOdds = dealer.getBetMagnification()*dealer.getOdds();
@@ -89,7 +90,7 @@ public class Human {
 
     /**
      * プレイヤーの現在所持しているカードを破棄するためのメソッド
-     * @param posessionCard このメソッドでいったんnullにします
+     * このメソッドで所持カードをnullにします
      * このメソッドはプレイヤーがカードを引き直す時に実行するように実装しています
      */
     public void resetPosessionCard(){

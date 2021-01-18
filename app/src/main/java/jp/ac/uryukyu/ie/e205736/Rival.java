@@ -56,6 +56,8 @@ public class Rival extends Human {
 
     /**
      * ユーザーが対戦するプレイヤーが勝負をするか降りるか決めるためのメソッド
+     * @param player1 ユーザーが操作するプレイヤーのインスタンス
+     * @param dealer　ゲームを進行させるディーラーのインスタンス
      */
     public void thinkBattle(Player player1,Dealer dealer){
         if(player1.getPossesionCard().getCardNumber()==13){
