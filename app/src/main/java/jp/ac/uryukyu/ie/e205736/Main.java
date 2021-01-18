@@ -1,6 +1,9 @@
 package jp.ac.uryukyu.ie.e205736;
 import java.util.Scanner;
 
+/**
+ * 実際にゲームを進行させるクラス
+ */
 public class Main {
     
 
@@ -16,11 +19,11 @@ public class Main {
             while ((player1.getPossesionChip()>0)&&(player2.getPossesionChip()>0)) {
                 player1.drawCard();
                 player2.drawCard();
-                System.out.println("相手のカードは" + player2.getPossesionCard().getCardNumber());
+                player1.showRivalCard(player2);
                 player2.facialExpression(player1);
                 player2.reDrawCard(player1);
                 scanner.nextLine();
-                System.out.println("相手のカードは" + player2.getPossesionCard().getCardNumber());
+                player1.showRivalCard(player2);
                 player2.oddsUp(player1, dealer);
                 player2.thinkBattle(player1, dealer);
                 scanner.nextLine();

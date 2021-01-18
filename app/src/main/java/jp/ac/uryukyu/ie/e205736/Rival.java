@@ -1,20 +1,30 @@
 package jp.ac.uryukyu.ie.e205736;
 
+/**
+ * Humanクラスを継承させているユーザーが対戦するプレイヤーのクラス
+ * ユーザーが操作するプレイヤーの所持しているカードの数字によって
+ * 振る舞いが変わるように実装しています
+ */
 public class Rival extends Human {
     
     Rival(String name){
         super(name);
     }
     
-    public void facialExpression(Player target1) {
-        if(target1.getPossesionCard().getCardNumber()<=5){
+    /**
+     * ユーザーが対戦するプレイヤーの表情を出力するためのメソッド
+     * @param player1　ユーザーが操作するプレイヤーのインスタンス
+     * ユーザーにはこのメソッドの結果をヒントにゲームをプレイしてもらう
+     */
+    public void facialExpression(Player player1) {
+        if(player1.getPossesionCard().getCardNumber()<=5){
             System.out.println(getName()+"は勝気な表情を浮かべている...");
         }
-        if(6<=target1.getPossesionCard().getCardNumber()&&target1.getPossesionCard().getCardNumber()<=10){
+        if(6<=player1.getPossesionCard().getCardNumber()&&player1.getPossesionCard().getCardNumber()<=10){
             System.out.println(getName()+"は微妙な顔をしている...");
         }
 
-        if(11<=target1.getPossesionCard().getCardNumber()){
+        if(11<=player1.getPossesionCard().getCardNumber()){
             System.out.println(getName()+"は不満げな表情を浮かべている...");
         }
         
@@ -22,26 +32,38 @@ public class Rival extends Human {
 
     
 
-    public void reDrawCard(Player target1){
-        if(8<=target1.getPossesionCard().getCardNumber()){
+    /**
+     * ユーザーが対戦するプレイヤーがカードを引き直すためのメソッド
+     * @param player1　ユーザーが操作するプレイヤーのインスタンス
+     */
+    public void reDrawCard(Player player1){
+        if(8<=player1.getPossesionCard().getCardNumber()){
             drawCard();
             System.out.println(getName()+"は引き直した...");
         }
     }
 
-    public void oddsUp(Player target1,Dealer target){
-        if(target1.getPossesionCard().getCardNumber()<=10){
-            oddsDoubleUp(target);
+    /**
+     * ユーザーが対戦するプレイヤーが賭け金を上げるためのメソッド
+     * @param player1　ユーザーが操作するプレイヤーのインスタンス
+     * @param dealer　 ゲームを進行させるディーラーのインスタンス
+     */
+    public void oddsUp(Player player1,Dealer dealer){
+        if(player1.getPossesionCard().getCardNumber()<=10){
+            oddsDoubleUp(dealer);
         }
     }
 
-    public void thinkBattle(Player player1,Dealer target){
+    /**
+     * ユーザーが対戦するプレイヤーが勝負をするか降りるか決めるためのメソッド
+     */
+    public void thinkBattle(Player player1,Dealer dealer){
         if(player1.getPossesionCard().getCardNumber()==13){
-            fold(target);
+            fold(dealer);
             System.out.println(getName()+"は降りる気らしい...");
         }else{
             battle();
-            System.out.println(getName()+"はやる気満々だ！");
+            System.out.println(getName()+"は勝負する気満々だ！");
         }
     }
 
