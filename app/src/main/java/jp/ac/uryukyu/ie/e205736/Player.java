@@ -37,6 +37,13 @@ public class Player extends Human {
         if(actionNumber==4){battle();}
     }
 
+    public void selectAction(int actionNumber,Dealer dealer){
+        if(actionNumber==1){drawCard();}
+        if(actionNumber==2){oddsDoubleUp(dealer);}
+        if(actionNumber==3){fold(dealer);}
+        if(actionNumber==4){battle();}
+    }
+
     /**
      * 相手プレイヤーのカードの数字を出力するためのメソッド
      * 相手のカードが見えるルールはこのメソッドで実装しています
