@@ -31,10 +31,7 @@ public class Player extends Human {
 
         
         int actionNumber = scanner.nextInt();
-        if(actionNumber==1){drawCard();}
-        if(actionNumber==2){oddsDoubleUp(dealer);}
-        if(actionNumber==3){fold(dealer);}
-        if(actionNumber==4){battle();}
+        selectAction(actionNumber, dealer);
     }
 
     public void selectAction(int actionNumber,Dealer dealer){

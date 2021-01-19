@@ -106,6 +106,14 @@ public class Human {
     }
 
     /**
+     * 所持チップをリセットするためのメソッド
+     * @return
+     */
+    public void resetPossessionChip(){
+        possessionChip = 100;
+    }
+
+    /**
      * プレイヤーの名前を返すためのメソッド
      * @return name
      */

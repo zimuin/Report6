@@ -17,5 +17,19 @@ public class MainTest {
         assertEquals(defaultChip,testPlayer2.getPossesionChip());
         assertEquals(defaultodds,testDealer.getOdds());
         assertEquals(defaultbetMagnification,testDealer.getBetMagnification());
+        testPlayer1.selectAction(2, testDealer);
+        int expectedOdds = 2;
+        assertEquals(expectedOdds,testDealer.getOdds());
+        testDealer.resetOdds();
+        testPlayer1.selectAction(3, testDealer);
+        int expectedChip = 95;
+        String expectedWill1 = "no";
+        assertEquals(expectedChip,testPlayer1.getPossesionChip());
+        assertEquals(expectedWill1,testPlayer1.getBattleWill());
+        testPlayer1.resetPossessionChip();
+        testPlayer1.resetBattleWill();
+        testPlayer1.selectAction(4, testDealer);
+        String expectedWill2 = "yes";
+        assertEquals(expectedWill2, testPlayer1.getBattleWill());
     }
 }
